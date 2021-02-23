@@ -1,3 +1,4 @@
+from _utils import resource_path
 class Settings:
 
     def __init__(self):
@@ -14,6 +15,9 @@ class Settings:
         self.speed_scale = 1.1
 
         self.initialize_dynamic_settings()
+
+        self.pxfont = resource_path('fonts/x16y32pxGridGazer.ttf')
+        # self.pxfont = resource_path('fonts/zpix.ttf')
 
     def initialize_dynamic_settings(self):
         self.ship_limit = 3

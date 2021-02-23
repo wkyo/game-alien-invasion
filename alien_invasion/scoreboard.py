@@ -14,15 +14,16 @@ class Scoreboard:
         self.settings = ai_game.settings
         self.stats = ai_game.stats
 
+        self.font = pygame.font.Font(self.settings.pxfont, 28)
         self.text_color = (30, 30, 30)
-        self.font = pygame.font.SysFont(None, 48)
+
         self.prep_score()
         self.prep_ships()
         self.prep_high_score()
         self.prep_level()
 
     def prep_score(self):
-        score = '{:,}'.format(self.stats.score)
+        score = '※ {:,}'.format(self.stats.score)
         self.score_image = self.font.render(
             score, True, self.text_color, self.settings.bg_color)
 
@@ -33,7 +34,7 @@ class Scoreboard:
     def prep_high_score(self):
         high_score = self.stats.high_score
         self.high_score_image = self.font.render(
-            '{:,}'.format(
+            'HIGH {:,}'.format(
                 high_score), True, self.text_color, self.settings.bg_color
         )
         self.high_score_rect = self.high_score_image.get_rect()
